@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "230878696410",
+    "firebase_url": "https://iftmof.firebaseio.com",
+    "project_id": "iftmof",
+    "storage_bucket": "iftmof.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230878696410:android:f60648522628e5f6",
+        "android_client_info": {
+          "package_name": "iftm.projeto.com.projetoof"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230878696410-l295clhji8s6o6tr0fc6hv5bo0c86bj3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYvMwsBvdP6qL4jM7WR2PuMvXMFT4Wlsk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
