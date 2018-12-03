@@ -7,13 +7,40 @@
     tools:context=".ui.activity.GerenciarUsuariosActivity"
     android:orientation="vertical">
 
-
-
-    <android.support.v7.widget.Toolbar
+    <RelativeLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:navigationIcon="?attr/homeAsUpIndicator" />
+        android:background="@color/colorPrimary"
+        android:visibility="gone"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_margin="5dp"
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/backimg"
+            android:onClick="onBackActivity"
+            android:tint="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_back"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            tools:text="Gerenciar Usuários"/>
+
+        <View android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorAccent"/>
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/list_usuarios"

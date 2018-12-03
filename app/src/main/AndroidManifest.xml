@@ -15,7 +15,7 @@
         <activity
             android:name=".ui.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.UserNotPermissionActivity" />
-        <activity android:name=".ui.activity.GerenciarUsuariosActivity"></activity>
+        <activity android:name=".ui.activity.GerenciarUsuariosActivity" />
+        <activity android:name=".ui.activity.AlterarUsuarioActivity"></activity>
     </application>
 
 </manifest>
