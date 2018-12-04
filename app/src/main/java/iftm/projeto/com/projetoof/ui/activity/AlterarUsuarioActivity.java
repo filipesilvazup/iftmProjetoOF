@@ -1,5 +1,7 @@
 package iftm.projeto.com.projetoof.ui.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -72,5 +74,15 @@ public class AlterarUsuarioActivity extends AppCompatActivity {
         Snackbar snackbar = Snackbar
                 .make(linearLayout, "Usuário Alterado com sucesso!!!", Snackbar.LENGTH_LONG);
         snackbar.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getContext(), MainActivity.class));
+    }
+
+    private Context getContext() {
+        return this;
     }
 }

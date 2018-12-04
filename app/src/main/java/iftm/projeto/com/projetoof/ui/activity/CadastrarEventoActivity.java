@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,6 +31,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
     EditText endereco;
     EditText valorIngresso;
     EditText classificacao;
+    TextView tvTitulo;
     Evento evento;
     DatabaseReference myRef;
     LinearLayout linearLayout;
@@ -49,6 +51,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
         classificacao = findViewById(R.id.tv_menor_idade);
         valorIngresso = findViewById(R.id.tv_valor_ingresso_evento);
         cadastro = findViewById(R.id.bt_cadastro);
+        tvTitulo = findViewById(R.id.tv_titulo);
         myRef = FirebaseDatabase.getInstance().getReference();
         editar = false;
         cadastro.setText("Cadastrar Evento");
@@ -56,6 +59,7 @@ public class CadastrarEventoActivity extends AppCompatActivity {
         if (getIntent().hasExtra("evento")) {
             evento = (Evento) getIntent().getExtras().get("evento");
             cadastro.setText("Alterar Evento");
+            tvTitulo.setText("Alterar Evento");
             preencher();
         }
 

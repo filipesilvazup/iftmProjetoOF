@@ -235,6 +235,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Inicio
+            startActivity(new Intent(this, MainActivity.class));
         }  else if (id == R.id.nav_slideshow) {
             //Gerenciar Usuarios
             startActivity(new Intent(this, GerenciarUsuariosActivity.class));

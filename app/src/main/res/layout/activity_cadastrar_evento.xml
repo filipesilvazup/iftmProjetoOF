@@ -16,6 +16,7 @@
 
 
         <TextView
+            android:id="@+id/tv_titulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastar Evento"
@@ -41,6 +42,7 @@
             android:id="@+id/tv_data_inicio_evento"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="date"
             android:hint="Data"
             android:textAlignment="center" />
 
@@ -71,7 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Classificação (IDADE)"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:inputType="number"/>
 
 
         <Button

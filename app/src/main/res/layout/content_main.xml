@@ -38,10 +38,10 @@
 
         <EditText
             android:id="@+id/et_busca"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="number"
-            android:hint="Insira uma idade"/>
+            android:hint="Idade"/>
         <Button
             android:id="@+id/bt_buscar"
             android:layout_width="wrap_content"
