@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void login(View view) {
         loading.setVisibility(View.VISIBLE);
-        if (!email.getText().toString().equals("") && !senha.getText().toString().equals("") ) {
+        if (!email.getText().toString().equals("") && !senha.getText().toString().equals("")) {
 
 
             mAuth.signInWithEmailAndPassword(email.getText().toString(), senha.getText().toString())
@@ -67,36 +67,46 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         }
                     });
-        }else {
+        } else {
+            loading.setVisibility(View.GONE);
             Snackbar snackbar = Snackbar
                     .make(linearLayout, "E-mail e/ou senha inválidos! :(", Snackbar.LENGTH_LONG);
             snackbar.show();
+
         }
     }
 
     public void createAccount(View view) {
         loading.setVisibility(View.VISIBLE);
-        mAuth.createUserWithEmailAndPassword(email.getText().toString(), senha.getText().toString())
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            loading.setVisibility(View.GONE);
-                            user = mAuth.getCurrentUser();
-                            usuario = new User(email.getText().toString(), senha.getText().toString(), Constantes.USER_SEM_PERMISSAO, user.getUid()); //0 admin - 1 não pagante - 2 pagante
-                            myRef.child("user").push().setValue(usuario);
-                            Snackbar snackbar = Snackbar
-                                    .make(linearLayout, "Conta Criada com Sucesso! Faça o Login! :D", Snackbar.LENGTH_LONG);
-                            snackbar.show();
-                        } else {
-                            loading.setVisibility(View.GONE);
-                            Snackbar snackbar = Snackbar
-                                    .make(linearLayout, "Falha ao criar a conta, tente novamente! :(", Snackbar.LENGTH_LONG);
-                            snackbar.show();
-                        }
+        if (!email.getText().toString().equals("") && !senha.getText().toString().equals("")) {
 
-                    }
-                });
+            mAuth.createUserWithEmailAndPassword(email.getText().toString(), senha.getText().toString())
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                loading.setVisibility(View.GONE);
+                                user = mAuth.getCurrentUser();
+                                usuario = new User(email.getText().toString(), senha.getText().toString(), Constantes.USER_SEM_PERMISSAO, user.getUid()); //0 admin - 1 não pagante - 2 pagante
+                                myRef.child("user").push().setValue(usuario);
+                                Snackbar snackbar = Snackbar
+                                        .make(linearLayout, "Conta Criada com Sucesso! Faça o Login! :D", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            } else {
+                                loading.setVisibility(View.GONE);
+                                Snackbar snackbar = Snackbar
+                                        .make(linearLayout, "Falha ao criar a conta, tente novamente! :(", Snackbar.LENGTH_LONG);
+                                snackbar.show();
+                            }
+
+                        }
+                    });
+        } else {
+            loading.setVisibility(View.GONE);
+            Snackbar snackbar = Snackbar
+                    .make(linearLayout, "E-mail e/ou senha inválidos! :(", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        }
     }
 
     private void updateUI(FirebaseUser user) {

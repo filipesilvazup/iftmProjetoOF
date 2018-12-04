@@ -139,6 +139,7 @@ public class EventoActivity extends AppCompatActivity {
     }
 
     private void getAllUsers() {
+        myRef = FirebaseDatabase.getInstance().getReference();
         myRef.child("user").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
