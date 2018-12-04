@@ -10,16 +10,20 @@ import java.util.List;
 
 import iftm.projeto.com.projetoof.R;
 import iftm.projeto.com.projetoof.ui.model.User;
+import iftm.projeto.com.projetoof.ui.model.UserDatabase;
+import iftm.projeto.com.projetoof.ui.utils.Constantes;
 
 public class AdapterUsuario extends BaseAdapter {
 
-    private final List<User> users;
+    private final List<UserDatabase> users;
     private final Activity act;
 
-    public AdapterUsuario(List<User> users, Activity act) {
+    public AdapterUsuario(List<UserDatabase> users, Activity act) {
         this.users = users;
         this.act = act;
     }
+
+
 
     @Override
     public int getCount() {
@@ -27,7 +31,7 @@ public class AdapterUsuario extends BaseAdapter {
     }
 
     @Override
-    public User getItem(int position) {
+    public UserDatabase getItem(int position) {
         return this.users.get(position);
     }
 
@@ -44,8 +48,15 @@ public class AdapterUsuario extends BaseAdapter {
         TextView tipo = view.findViewById(R.id.tv_tipo_usuario);
 
         email.setText(users.get(position).getEmail());
-        tipo.setText(users.get(position).getTipo());
+
+        if(users.get(position).getTipo().equals(Constantes.USER_SEM_PERMISSAO)) tipo.setText("Sem Permissão");
+        if(users.get(position).getTipo().equals(Constantes.USER_ADMIN)) tipo.setText("Administrador");
+        if(users.get(position).getTipo().equals(Constantes.USER_PAGO)) tipo.setText("Usuário Vip");
+        if(users.get(position).getTipo().equals(Constantes.USER_FREE)) tipo.setText("Usuário Free");
+
 
         return view;
     }
+
+
 }

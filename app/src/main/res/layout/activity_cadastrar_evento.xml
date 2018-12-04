@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="12dp"
+        android:id="@+id/layout_cadastrar"
+        tools:context=".ui.activity.CadastroEventoActivity">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cadastar Evento"
+            android:textAlignment="center"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/tv_nome_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/tv_local_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Endereço"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/tv_data_inicio_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data"
+            android:textAlignment="center" />
+
+
+        <EditText
+            android:id="@+id/tv_hora_inicio_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Horário"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/tv_valor_ingresso_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="R$ Valor Ingresso"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/tv_url_evento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Url Imagem"
+            android:textAlignment="center" />
+
+        <EditText
+            android:id="@+id/tv_menor_idade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Classificação (IDADE)"
+            android:textAlignment="center" />
+
+
+        <Button
+            android:id="@+id/bt_cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/background_button"
+            android:onClick="cadastrar"
+            android:text="Cadastrar Evento"
+            android:textColor="#ffffff" />
+
+
+    </LinearLayout>
+
+</ScrollView>

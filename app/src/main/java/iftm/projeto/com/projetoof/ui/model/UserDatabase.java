@@ -2,13 +2,15 @@ package iftm.projeto.com.projetoof.ui.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+public class UserDatabase implements Serializable {
     private String email;
     private String senha;
     private String tipo; //0 notUserPermission, 1 admin, 2 userNotPayment, 3 userPayment
     private String uId;
+    private String key;
 
-    public User(String email, String senha, String tipo, String uId) {
+    public UserDatabase(String key, String email, String senha, String tipo, String uId) {
+        this.key = key;
         this.email = email;
         this.senha = senha;
         this.tipo = tipo;
@@ -45,5 +47,14 @@ public class User implements Serializable {
 
     public void setUid(String uId) {
         this.uId = uId;
+    }
+
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

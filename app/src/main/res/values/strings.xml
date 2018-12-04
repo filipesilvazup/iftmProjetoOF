@@ -9,8 +9,8 @@
     <string name="type_prompt">Tipo do Usuário</string>
 
     <string-array name="types_arrays">
-        <item>Administrador</item>
         <item>Sem permissão</item>
+        <item>Administrador</item>
         <item>Usuário Free</item>
         <item>Usuário VIP</item>
     </string-array>

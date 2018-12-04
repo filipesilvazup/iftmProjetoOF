@@ -25,7 +25,9 @@
         </activity>
         <activity android:name=".ui.activity.UserNotPermissionActivity" />
         <activity android:name=".ui.activity.GerenciarUsuariosActivity" />
-        <activity android:name=".ui.activity.AlterarUsuarioActivity"></activity>
+        <activity android:name=".ui.activity.AlterarUsuarioActivity" />
+        <activity android:name=".ui.activity.EventoActivity" />
+        <activity android:name=".ui.activity.CadastrarEventoActivity"></activity>
     </application>
 
 </manifest>
